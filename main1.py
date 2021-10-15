@@ -29,8 +29,7 @@ def predict():
             
             clean_data.append(word)
             
-    return render_template ('home.html',predict={ 'len_sent':len_sent,'len_word':len_word,'freq':freq,
-    })     
+    return render_template ('home.html',predict={ 'len_sent':len_sent,'len_word':len_word,'freq':freq})     
             
     
     information=getsentence()
