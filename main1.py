@@ -13,11 +13,11 @@ app=Flask(__name__)
 def hello():
     return render_template('home.html')
 
-@app.route('/predict', methods = ['get'])
+@app.route('/predict', methods = ['post'])
 def predict():
-    sent_name=request.form.get('Enter a sentence')
+    data=request.form.get('data')
     
-    data=input('enter a sentence:')
+    
     len_sent=len(nltk.sent_tokenize(data))
     len_word=len(nltk.word_tokenize(data))
     
@@ -32,8 +32,7 @@ def predict():
     return render_template ('home.html',predict={ 'len_sent':len_sent,'len_word':len_word,'freq':freq})     
             
     
-    information=getsentence()
-    print(information)
+   
 
 
 if __name__=='__main__':
